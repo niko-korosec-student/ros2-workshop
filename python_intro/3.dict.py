@@ -1,51 +1,24 @@
-oseba = {
-    "ime": "Niko",          # Ustvarimo slovar z začetnimi podatki o osebi
-    "starost": 25,
-    "poklic": "inženir"
+robot = {
+    "ime": "UR5e",
+    "doseg_m": 0.85,
+    "masa_kg": 20,
+    "aktiven": True
 }
 
-print("Podatki o osebi:", oseba)  # Izpišemo celoten slovar
+robot["lokacija"] = "Maribor"    # Dodajanje novega ključa in vrednosti
+robot["masa_kg"] = 22            # Posodabljanje vrednosti ključa
+del robot["aktiven"]             # Brisanje ključa in vrednosti
 
-oseba["lokacija"] = "Maribor"    # Dodamo nov ključ 'lokacija' z vrednostjo 'Maribor'
-print("Po dodajanju lokacije:", oseba)
+print("Robot podatki:", robot)  # Izpis celotnega slovarja
 
-oseba["starost"] = 26            # Posodobimo vrednost ključa 'starost' na 26
-print("Po posodobitvi starosti:", oseba)
+# Izpis vseh ključev in vrednosti
+for ključ, vrednost in robot.items():
+    print(f"{ključ}: {vrednost}")
 
-del oseba["poklic"]              # Odstranimo ključ 'poklic' iz slovarja
-print("Po odstranitvi poklica:", oseba)
+# Izpis samo ključev
+for ključ in robot.keys():
+    print("Ključ:", ključ)
 
-for ključ, vrednost in oseba.items():  # Zanka, ki gre skozi vse ključe in vrednosti
-    print(f"{ključ}: {vrednost}")       # Izpišemo posamezen ključ in pripadajočo vrednost
-
-
-"""
-Dictionary (slovar) v Pythonu je podatkovna struktura, ki shranjuje podatke v obliki parov ključ-vrednost. Ključ je unikaten identifikator, ki je lahko npr. niz (string), vrednost pa je lahko katerakoli Pythonova vrednost.
-Razlaga primera:
-
-    oseba = { ... }
-    Ustvarili smo slovar z informacijami o osebi. Ključi so "ime", "starost" in "poklic", vrednosti pa "Niko", 25 in "inženir".
-
-    print("Podatki o osebi:", oseba)
-    Izpišemo celoten slovar.
-
-    oseba["lokacija"] = "Maribor"
-    Dodajamo nov ključ "lokacija" s pripadajočo vrednostjo "Maribor".
-
-    oseba["starost"] = 26
-    Posodobimo vrednost ključa "starost" na 26.
-
-    del oseba["poklic"]
-    Odstranimo ključ "poklic" in njegovo vrednost iz slovarja.
-
-    for ključ, vrednost in oseba.items():
-    Zanko, ki gre skozi vse pare ključ-vrednost in jih izpiše. Metoda .items() vrne vse ključe in vrednosti v slovarju.
-
-Zakaj uporabljati slovarje?
-
-    Omogočajo hiter dostop do vrednosti preko ključev (ne glede na položaj).
-
-    So zelo fleksibilni za shranjevanje strukturiranih podatkov.
-
-    Pogosto uporabljeni za konfiguracije, parametre, baze podatkov v pomnilniku itd.
-"""
+# Izpis samo vrednosti
+for vrednost in robot.values():
+    print("Vrednost:", vrednost)

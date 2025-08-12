@@ -16,34 +16,16 @@ def podatki_o_osebi(ime, starost, **lastnosti):
     return info
 
 def fib(n):
-    """Rekurzivna funkcija za n-ti Fibonacci člen."""
     if n <= 1:
         return n
     return fib(n-1) + fib(n-2)
 
-# Uporaba funkcij
-print(pozdrav("Niko", "Korošec"))
-print(pozdrav("Ana"))
+# Primeri uporabe
+print(pozdrav("Niko", "Korošec"))       # z priimkom
+print(pozdrav("Ana"))                    # brez priimka
 
-print("Vsota:", vsota(1, 3, 5, 7, 9))
+print("Vsota:", vsota(1, 3, 5, 7, 9))  # vsota poljubnega števila argumentov
 
 print(podatki_o_osebi("Marko", 30, poklic="inženir", mesto="Ljubljana", hobi="kolesarjenje"))
 
-print("10. Fibonacci člen je:", fib(10))
-
-
-"""
-Razlaga:
-
-    Funkcije so koščki kode, ki jih lahko večkrat uporabimo z različnimi vhodnimi podatki (argumenti).
-
-    Parametri lahko imajo privzete vrednosti, kar pomeni, da jih ni treba vedno podati.
-
-    Z *args lahko funkcija sprejme poljubno število nepodpisanih argumentov (npr. več števil, ki jih seštejemo).
-
-    Z **kwargs lahko funkcija sprejme poljubno število argumentov kot ključ-vrednost pare (npr. dodatne podatke o osebi).
-
-    Rekurzija pomeni, da se funkcija kliče sama – uporabna je pri reševanju problemov, ki jih lahko razdelimo na manjše enake dele (npr. izračun Fibonacci števila).
-
-    Funkcije nam pomagajo, da je koda bolj urejena, pregledna in ponovno uporabna.
-"""
+print("10. Fibonacci člen je:", fib(10))  # rekurzivna funkcija

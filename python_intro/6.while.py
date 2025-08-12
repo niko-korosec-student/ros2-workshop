@@ -9,13 +9,14 @@ j = 0
 while True:
     print(f"do-while: Število je {j}")
     j += 1
-    if not (j < 5):
+    if j >= 5:
         break
 
-"""
-razlaga:
-
-    Prvi del: while zanka preveri pogoj pred izvajanjem in izpiše števila od 0 do 4.
-
-    Drugi del: simulacija do-while zanke vedno izvede telo vsaj enkrat, nato preveri pogoj in ponovi, dokler je pogoj izpolnjen.
-"""
+print("\nVpiši 'stop' za konec programa.")
+while True:
+    user_input = input("Vnesi nekaj: ")
+    if user_input.lower() == "stop":
+        print("Konec zanke.")
+        break
+    else:
+        print(f"Vnesel si: {user_input}")
